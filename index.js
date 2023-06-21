@@ -16,12 +16,12 @@ function addTask() {
         buttons.setAttribute('class', 'ladoderecho');
         const editButton = document.createElement('button');
         editButton.textContent = 'Editar';
-        editButton.setAttribute('class', 'eliminareditar'); // Agregar la clase aquí
+        editButton.addEventListener('click',editTask);
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Eliminar';
         deleteButton.addEventListener('click',deleteTask);
-        deleteButton.setAttribute('class', 'eliminareditar'); // Agregar la clase aquí
 
+        deleteButton.setAttribute('class', 'eliminareditar'); 
         buttons.appendChild(editButton);
         buttons.appendChild(deleteButton);
         divLadoIzquierdo.appendChild(checkbox);
@@ -37,7 +37,7 @@ function addTask() {
                     <label>${text}</label>
                 </div>
                 <div class="ladoderecho">
-                    <button class="eliminareditar">Editar</button>
+                    <button onclick="editTask(event)" class="eliminareditar">Editar</button>
                     <button onclick="deleteTask(event)" class="eliminareditar">Eliminar</button>
                 </div>
             </div>
@@ -77,6 +77,23 @@ function deleteTask(event) {
     const list = document.getElementById('listadeproceso');
     list.removeChild(deleteItem);
 }
+
+function editTask(event) {
+    const editButton = event.target;
+    const listItem = editButton.parentNode.parentNode;
+    const label = listItem.querySelector('label');
+  
+    if (label.getAttribute('contenteditable') === 'false') {
+      label.setAttribute('contenteditable', 'true');
+      label.focus(); 
+      editButton.textContent = 'Guardar'; 
+    } else {
+      label.setAttribute('contenteditable', 'false');
+      editButton.textContent = 'Editar'; 
+    }
+  }
+  
+
 function clearList(){
     const list = document.getElementById('completadol');
     list.innerHTML=' ';
