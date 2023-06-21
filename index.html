@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <link rel="stylesheet" href="./index.css">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
     <title>Actividad</title>
+</head>
 <body>
     <div class="space">
         <h3 class="subtitle">Agregar tarea</h3>
-        <form action="">
+        <form onsubmit="event.preventDefault(); addTask();">
             <div class="horizontal">
-                <input type="text" id="ipt">
+                <input type="text" id="ipt" class="agregaript">
                 <button type="submit" id="agregar">Agregar</button>
             </div>
         </form>
@@ -15,32 +17,46 @@
     <div class="process-complete">
         <div class="proceso">
             <h3 class="subtitle">En proceso</h3>
-            <div class="half">
-                <div class="ladoizquiero">
-                    <input type="checkbox">
-                    <label for="">Beber 2L de agua</label>
-                </div>
-                <div class="ladoderecho">
-                    <button class="eliminareditar">Editar</button>
-                    <button class="eliminareditar">Eliminar</button>
-                </div>
-            </div>
-            <div class="half">
-                <div class="ladoizquiero">
-                    <input type="checkbox">
-                    <label for="">Mandar documentos de beca</label>
-                </div>
-                <div class="ladoderecho">
-                    <button class="eliminareditar">Editar</button>
-                    <button class="eliminareditar">Eliminar</button>
-                </div>
-            </div>
+            <ul id="listadeproceso">
+                <li>
+                    <div class="half">
+                        <div class="ladoizquierdo">
+                            <input type="checkbox" onchange="completed(event)">
+                            <label for="">Beber 2L de agua</label>
+                        </div>
+                        <div class="ladoderecho">
+                            <button class="eliminareditar">Editar</button>
+                            <button onclick="deleteTask(event)" class="eliminareditar">Eliminar</button>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="half">
+                        <div class="ladoizquierdo">
+                            <input type="checkbox" onchange="completed(event)">
+                            <label for="">Mandar documentos de beca</label>
+                        </div>
+                        <div class="ladoderecho">
+                            <button class="eliminareditar">Editar</button>
+                            <button onclick="deleteTask(event)" class="eliminareditar">Eliminar</button>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="completado">
-            <h3 class="subtitle">Completado</h3>
-            <input type="checkbox" value="">
-            <label style="text-decoration: line-through;" for="">Pagar netflix</label>
+            <h3 class="subtitle">Completado    <a class="clear-list" onclick="clearList()">  Limpiar lista</a></h3> 
+            <ul id="completadol">
+                <li>
+                    <input type="checkbox" value="checked">
+                    <label>Pagar netflix</label>
+                </li>
+            </ul>    
         </div>
     </div>
 
-</body></html>
+    <script src="index.js"></script>
+</body>
+</html>

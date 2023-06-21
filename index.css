@@ -1,37 +1,40 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Tahoma;
 }
 
-.space{
+.space {
     padding: 10px;
 }
 
-.subtitle{
+.subtitle {
     margin-bottom: 10px;
 }
 
-#agregaript{
+.agregaript {
     width: 300px;
     height: 30px;
     border-radius: 4px;
     margin-right: 10px;
     border-style: solid;
     border-width: 1px;
+    padding-left: 5px;
 }
 
-.eliminareditar{
+.eliminareditar {
     background-color: #888d92;
     border-style: none;
     padding: 4px 8px;
     border-radius: 2px;
     margin: 2px;
+    margin-right: 10px; /* aumentar la separación */
     color: white;
+    display: inline-block;
 }
 
-#agregar{
-    padding: 8px 4px;
+#agregar {
+    padding: 9px 8px;
     background-color: #3e6ae3;
     color: white;
     border-style: none;
@@ -41,49 +44,85 @@
 .horizontal {
     display: flex;
 }
-.right-space{
+
+.right-space {
     margin-right: auto;
 }
 
-.proceso{
+.proceso {
     width: 40%;
     padding: 10px;
 }
-.process-complete{
+
+.process-complete {
     display: flex;
     width: 100%;
 }
-.completado{
+
+.completado {
     width: 40%;
     padding: 10px;
 }
-.ladoizquierdo{
-    display: flex;
-    align-items: center;
-}
-.ladoderecho{
-    display: flex;
+
+.ladoizquierdo {
     align-items: center;
 }
 
-.check{
+.ladoderecho {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+}
+
+
+.check {
     margin-right: auto;
 }
 
-.half{
+.half 
+{
     display: flex;
     justify-content: space-between;
-}
-
-.ladoizquierdo{
-    display: flex;
     align-items: center;
 }
+    
 
-.ladoderecho{
+#listadeproceso li {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+#listadeproceso .half {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+#listadeproceso .ladoizquierdo {
+    margin-top: 10px;
+}
+
+#completadol li {
+    list-style-type: none;
+    text-decoration: line-through;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#completadol li label {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.clear-list {
+    color: #888d92;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 
-
+ 
